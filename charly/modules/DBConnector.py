@@ -4,7 +4,7 @@ class DBConnector:
 
     def write(self, playerList):
 
-        conn = sqlite3.connect('ranking.db')
+        conn = sqlite3.connect('../ranking.db')
         c = conn.cursor()
 
         for player in playerList:

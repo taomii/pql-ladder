@@ -9,11 +9,13 @@ def main():
     logger.debug("Starting Charly")
 
     config = configparser.ConfigParser()
-    config.read("config.ini")
+    config.read("../config.ini")
 
     api = APIHandler()
     db = DBConnector()
 
     playerList = api.call()
     db.write(playerList)
+
+main()
 
