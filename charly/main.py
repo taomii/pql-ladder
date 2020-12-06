@@ -17,5 +17,3 @@ def main():
     playerList = api.call()
     db.write(playerList)
 
-main()
-
