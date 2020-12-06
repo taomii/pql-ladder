@@ -1,6 +1,5 @@
 import configparser
 import logging
-import os
 
 from charly.modules.APICaller import APIHandler
 from charly.modules.DBConnector import DBConnector
