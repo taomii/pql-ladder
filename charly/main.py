@@ -6,7 +6,7 @@ from charly.modules.DBConnector import DBConnector
 
 def main():
     logger = logging.getLogger(__name__)
-    logger.debug("Starting Charly")
+    logger.debug("Launching Charly Webapp")
 
     config = configparser.ConfigParser()
     config.read("../config.ini")
