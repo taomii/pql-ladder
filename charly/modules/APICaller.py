@@ -16,7 +16,7 @@ class APIHandler:
         if dict_response["ok"] == True:
             for playerEntry in dict_response["players"]:
                 if "rating" in playerEntry:
-                    player = Player(playerEntry["steamid"], playerEntry['name'], playerEntry["rating"])
+                    player = Player(id = playerEntry["steamid"], name = playerEntry['name'], rating = playerEntry["rating"])
                     playerList.append(player)
 
         return playerList
