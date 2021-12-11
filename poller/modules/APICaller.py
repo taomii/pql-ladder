@@ -1,6 +1,6 @@
 import requests
 import json
-from charly.modules.Player import Player
+from poller.modules.Player import Player
 
 class APIHandler:
 

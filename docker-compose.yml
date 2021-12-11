@@ -1,0 +1,12 @@
+services:
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
