@@ -1,7 +1,7 @@
 from time import sleep
 
-from poller.modules.APICaller import APIHandler
-from poller.modules.DBConnector import DBConnector
+from modules.APICaller import APIHandler
+from modules.DBConnector import DBConnector
 
 def main():
     #Setup, maybe read from config file to read intervall, servers etc.

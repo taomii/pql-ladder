@@ -1,8 +1,6 @@
-CREATE DATABASE charly;
-
 CREATE TABLE players
 (
-    steamid INTEGER PRIMARY KEY,
-    name VARCHAR(64),
+    steamid bigint PRIMARY KEY,
+    nickname VARCHAR(64),
     rating INTEGER
 );
