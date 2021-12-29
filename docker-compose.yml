@@ -23,13 +23,12 @@ services:
       - postgresql-db
 
   api:
-    container_name: charly-api
+    container_name: charly-app
     build:
-      context: ./api
+      context: ./app
       dockerfile: Dockerfile
     ports:
-        - 5000:5000
+        - 42069:42069
     links:
       - postgresql-db
 
-  

@@ -32,8 +32,5 @@ def get_player(id):
     player = Players.query.get(id)
     return player_schema.jsonify(player)
 
-def main():
-    app.run(debug=True, host='0.0.0.0')
-
 if __name__ == '__main__':
-    main()
+    app.run(debug=True, host='0.0.0.0')

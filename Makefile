@@ -12,5 +12,7 @@ connect-db:
 	docker exec -ti charly-db bash
 connect-poller:
 	docker exec -ti charly-poller bash
+connect-api:
+	docker exec -ti charly-api bash
 clean docker:
 	docker system prune
