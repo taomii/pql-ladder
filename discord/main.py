@@ -2,8 +2,9 @@ from discord.ext import commands
 import requests
 import json
 import re
+import os
 
-DISCORD_TOKEN = "OTI2MDY2Mjc0NzU5NDc1MjQw.Yc2QbQ.FWi0USOB9r4HKyIh74yqnv1Hofg"
+DISCORD_TOKEN = os.environ['DISCORD_TOKEN']
 
 bot = commands.Bot(command_prefix="!pql-ladder ")
 

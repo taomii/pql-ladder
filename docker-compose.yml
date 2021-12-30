@@ -37,5 +37,7 @@ services:
     build:
       context: ./discord
       dockerfile: Dockerfile
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
     links:
       - api
