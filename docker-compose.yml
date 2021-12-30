@@ -32,3 +32,10 @@ services:
     links:
       - postgresql-db
 
+  discord:
+    container_name: charly-discord
+    build:
+      context: ./discord
+      dockerfile: Dockerfile
+    links:
+      - api
