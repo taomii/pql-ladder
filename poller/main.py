@@ -11,7 +11,7 @@ def main():
     while(True):
         playerList = api.call()
         db.writePlayers(playerList)
-        sleep(10)
+        sleep(15)
 
 if __name__ == "__main__":
     main()

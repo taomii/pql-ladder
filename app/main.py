@@ -3,6 +3,7 @@ from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@postgresql-db:5432/charly"
 
@@ -25,7 +26,8 @@ players_schema = PlayerSchema(many=True)
 def get_players():
     players = Players.query.all()
     result = players_schema.dump(players)
-    return {"players": result}
+    result_sorted = sorted(result, key=lambda d: d['rating'], reverse=True)
+    return {"players": result_sorted}
 
 @app.route('/<id>', methods=['GET'])
 def get_player(id):
