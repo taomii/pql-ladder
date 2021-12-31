@@ -1,6 +1,7 @@
 import sqlite3
 import psycopg2
 import os
+import datetime
 
 class DBConnector:
     def writePlayers(self, playerList):
@@ -14,6 +15,7 @@ class DBConnector:
         c = conn.cursor()
 
         for player in playerList:
+            print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ": Player online: " + str(player.id) + " " + player.name + " " +  str(player.rating))
 
             c.execute("SELECT * FROM players WHERE steamid =" + player.id)
             result = c.fetchone()
@@ -32,5 +34,3 @@ class DBConnector:
 
         c.close()
         conn.close()
-
-        print("Im running")

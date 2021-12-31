@@ -25,17 +25,22 @@ async def rank(ctx, arg):
 
     if arg.isdigit() == True:
         players = api_call()
-        clean_nick = clean_name(players[int(arg)-1]["nickname"])
-        rating = players[int(arg)-1]["rating"]
-        await ctx.channel.send(clean_nick + " is at rank " + arg + " with " + str(rating) + " rating")
 
+        if int(arg) < len(players):
+            clean_nick = clean_name(players[int(arg)-1]["nickname"])
+            rating = players[int(arg)-1]["rating"]
+            await ctx.channel.send(clean_nick + " is at rank " + arg + " with " + str(rating) + " rating")
+        else:
+            await ctx.channel.send("Only " + str(len(players)-1) + " players in ladder :(")
+    else:
+        await ctx.channel.send("Usage: !pql-ladder rank X")
     return
 
 @bot.command()
 async def top(ctx, arg):
 
     if arg.isdigit() == True:
-        if int(arg) <= 5:
+        if int(arg) <= 10:
             players = api_call()
             top_players = []
             for i in range(int(arg)):
@@ -53,17 +58,19 @@ async def top(ctx, arg):
 
             await ctx.channel.send(output)
         else:
-            await ctx.channel.send("chill, max 5 pls")
-
+            await ctx.channel.send("chill, max 10 pls")
+    else:
+        await ctx.channel.send("Usage: !pql-ladder top [1-9]|10 ")
     return
 
 @bot.command()
 async def steamid(ctx, arg):
     if arg.isdigit() == True:
-        response = requests.get("http://api:42069/" + str(arg))
+        response = requests.get("http://api:42069/player/" + str(arg))
         dict_response = json.loads(response.content)
         await ctx.channel.send(clean_name(dict_response["nickname"]) + " with " + str(dict_response["rating"]) + " rating")
-
+    else:
+        await ctx.channel.send("SteamID not found :(")
     return
 
 @bot.command(name="2k")
@@ -76,7 +83,6 @@ async def two_k(ctx):
         clean_nicks.append(clean_name(nick))
     nicks_string = ', '.join(clean_nicks)
     await ctx.channel.send("Players rated 2000 or above:\n" + nicks_string)
-
     return
 
 bot.run(DISCORD_TOKEN)

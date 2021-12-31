@@ -29,7 +29,7 @@ def get_players():
     result_sorted = sorted(result, key=lambda d: d['rating'], reverse=True)
     return {"players": result_sorted}
 
-@app.route('/<id>', methods=['GET'])
+@app.route('/player/<id>', methods=['GET'])
 def get_player(id):
     player = Players.query.get(id)
     return player_schema.jsonify(player)

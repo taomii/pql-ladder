@@ -22,7 +22,3 @@ class APIHandler:
                         playerList.append(player)
 
         return playerList
-
-    def test(self):
-        print("test")
-        return True

@@ -6,4 +6,4 @@ COPY . /discord/
 
 RUN pip3 install requests discord
 
-CMD [ "python3", "main.py"]
+CMD [ "python3", "-u", "main.py"]
