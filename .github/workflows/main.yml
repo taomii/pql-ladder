@@ -14,14 +14,5 @@ jobs:
       - name: Build
         run: docker-compose build
 
-      - name: Start Database
-        run: docker-composte up -d postgresql-db
-        
-      - name: Start API
-        run: docker-composte up -d api
-      
-      - name: Start Poller
-        run: docker-composte up -d poller
-        
-      - name: Start Discord
-        run: docker-composte up -d discord
+      - name: Run
+        run: docker-compose up -d
