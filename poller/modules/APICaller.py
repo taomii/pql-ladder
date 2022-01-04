@@ -6,7 +6,8 @@ class APIHandler:
 
     def __init__(self):
         self.urls = ['https://qlstats.net/api/server/185.107.96.27:27960/players',
-                     'https://qlstats.net/api/server/212.8.249.10:27961/players']
+                     'https://qlstats.net/api/server/212.8.249.10:27961/players',
+                     'https://qlstats.net/api/server/212.8.249.10:27960/players']
     def call(self):
         """Calls QLstats API, converts the JSON Data into a dictionary and returns a list of Player """
         playerList = []
