@@ -68,16 +68,6 @@ async def top(ctx, arg):
         await ctx.channel.send("Usage: !pql-ladder top [1-9]|10 ")
     return
 
-@bot.command()
-async def steamid(ctx, arg):
-    if arg.isdigit() == True:
-        response = requests.get("http://api:42069/player/" + str(arg))
-        dict_response = json.loads(response.content)
-        await ctx.channel.send(clean_name(dict_response["nickname"]) + " with " + str(dict_response["rating"]) + " rating")
-    else:
-        await ctx.channel.send("SteamID not found :(")
-    return
-
 @bot.command(name="2k")
 async def two_k(ctx):
     players = api_call()
