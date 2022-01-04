@@ -21,7 +21,7 @@ async def on_ready():
     print("We have logged in as {0.user}".format(bot))
 
 @bot.command()
-async def full(ctx, arg):
+async def full(ctx):
     await ctx.channel.send("http://34.139.107.2:42069/leaderboard")
     return
 
