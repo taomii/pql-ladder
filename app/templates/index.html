@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon"
+      type="image/png"
+      href="https://cdn.discordapp.com/emojis/700003787649319033.webp?size=96&quality=lossless">
+</link>
+<head>
+    <meta charset="UTF-8">
+    <title>pql leaderboard</title>
+    <style>
+        th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<center>
+<body>
+
+    <h1>pql leaderboard xd</h1>
+
+    <table>
+        <tr>
+            <th>rank</th>
+            <th>nickname</th>
+            <th>rating</th>
+            <th>steamid</th>
+        </tr>
+        {% for player in players %}
+        <tr>
+            <td>{{ player['rank'] }}</td>
+            <td>{{ player['nickname'] }}</td>
+            <td>{{ player['rating'] }}</td>
+            <td><a href="https://qlstats.net/player/{{ player['steamid'] }}">{{ player['steamid'] }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</center>
+</html>

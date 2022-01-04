@@ -1,5 +1,5 @@
 services:
-  postgresql-db:
+  db:
     container_name: charly-db
     build:
       context: ./db
@@ -20,7 +20,7 @@ services:
       context: ./poller
       dockerfile: Dockerfile
     links:
-      - postgresql-db
+      - db
 
   api:
     container_name: charly-app
@@ -30,7 +30,7 @@ services:
     ports:
         - 42069:42069
     links:
-      - postgresql-db
+      - db
 
   discord:
     container_name: charly-discord

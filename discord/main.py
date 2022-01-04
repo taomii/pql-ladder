@@ -21,6 +21,11 @@ async def on_ready():
     print("We have logged in as {0.user}".format(bot))
 
 @bot.command()
+async def full(ctx, arg):
+    await ctx.channel.send("http://34.139.107.2:42069/leaderboard")
+    return
+
+@bot.command()
 async def rank(ctx, arg):
 
     if arg.isdigit() == True:

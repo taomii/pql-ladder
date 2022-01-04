@@ -6,7 +6,7 @@ import datetime
 class DBConnector:
     def writePlayers(self, playerList):
         conn = psycopg2.connect(
-            host="postgresql-db",
+            host="db",
             database="charly",
             user="postgres",
             password="postgres",
