@@ -1,3 +1,5 @@
+import traceback
+
 from time import sleep
 
 from modules.APICaller import APIHandler
@@ -9,8 +11,12 @@ def main():
     db = DBConnector()
 
     while(True):
-        playerList = api.call()
-        db.writePlayers(playerList)
+        try:
+            playerList = api.call()
+            db.writePlayers(playerList)
+        except Exception as e:
+            print("Error XD \n" + traceback.format_exc())
+            continue
         sleep(15)
 
 if __name__ == "__main__":
